@@ -18,8 +18,8 @@ Enter feature values below to get predictions from the model.
 """)
 
 # API configuration
-# API_URL = "http://api:8000"  # Docker service name
-API_URL = "http://localhost:8000" # local name
+API_URL = "http://api:8000"  # Docker service name
+# API_URL = "http://localhost:8000" # local name
 # Sidebar for information
 st.sidebar.title("Model Information")
 st.sidebar.markdown("""

@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   api:
     build:
@@ -8,7 +6,7 @@ services:
     ports:
       - "8000:8000"
     volumes:
-      - ../../models:/app/models:ro
+      - ./api/models:/app/models:ro 
     environment:
       - PYTHONUNBUFFERED=1
     healthcheck:
@@ -26,8 +24,7 @@ services:
     ports:
       - "8501:8501"
     depends_on:
-      api:
-        condition: service_healthy
+      -  api
     environment:
       - PYTHONUNBUFFERED=1
     networks:
