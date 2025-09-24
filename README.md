@@ -71,29 +71,3 @@ uvicorn main:app --reload
 cd code/deployment/app
 streamlit run app.py
 ```
-
-
-## Step 6: Build and Run Script
-
-**File: `deploy.sh`**
-
-```bash
-#!/bin/bash
-
-echo "Starting ML Model Deployment..."
-
-# Train the model first
-echo "Step 1: Training the model..."
-cd code/models
-python train_model.py
-
-# Build and run with docker-compose
-echo "Step 2: Building and starting services..."
-cd ../deployment
-docker-compose down
-docker-compose up --build
-
-echo "Deployment complete!"
-echo "Access the application at: http://localhost:8501"
-echo "Access the API docs at: http://localhost:8000/docs"
-```
