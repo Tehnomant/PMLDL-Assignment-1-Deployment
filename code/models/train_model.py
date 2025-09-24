@@ -42,7 +42,7 @@ def train_model():
     print(f"Model accuracy: {accuracy:.4f}")
     
     # Save model
-    model_path = os.path.join('..', '..', 'models', 'random_forest_model.pkl')
+    model_path = os.path.join('models', 'random_forest_model.pkl')
     joblib.dump(model, model_path)
     print(f"Model saved to {model_path}")
     
@@ -51,7 +51,7 @@ def train_model():
         'feature_names': feature_names,
         'model_accuracy': accuracy
     }
-    joblib.dump(feature_info, os.path.join('..', '..', 'models', 'feature_info.pkl'))
+    joblib.dump(feature_info, os.path.join('models', 'feature_info.pkl'))
     
     return model, feature_names, accuracy
 
